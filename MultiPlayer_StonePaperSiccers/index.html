@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="1050" height="600"></canvas>
+</body>
+<canvas id="canvas"></canvas>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  //#region  canvas
+  const canvas = document.querySelector('canvas');
+  let context = canvas.getContext('2d');
+
+  canvas.width = 1050;
+  canvas.height = 600;
+  let width = canvas.width;
+  let height = canvas.height;
+  //#endregion
+  var socket = io();
+  let move = null;
+  let speler = null;
+  document.addEventListener('keydown', function(e) {
+    if (move == null) {
+      switch (e.keyCode) {
+        case 49:
+          move = "steen";
+          break;
+        case 50:
+          move = "papier";
+          break;
+        case 51:
+          move = "schaar";
+          break;
+      }
+      if (move == "schaar" || move == "papier" || move == "steen") {
+        console.log(move);
+        socket.emit("inputgiven", move);
+      }
+    }
+  });
+
+  socket.on("update", function(winnaar, move1, move2) {
+    updateCanvas();
+    context.font = "30px Arial";
+    context.fillStyle = "red";
+    context.fillText(winnaar, 10, 50);
+    context.fillText("move speler 1: " + move1, 10, 100);
+    context.fillText("move speler 2: " + move2, 10, 130);
+    move = null;
+  });
+
+  socket.on('disconnect', function() {
+    socket = null;
+    alert("server down");
+  });
+  socket.on("spelercheck", function(s) {
+    console.log(s);
+    speler = s;
+    updateCanvas();
+  });
+
+updateCanvas();
+function updateCanvas() {
+  context.clearRect(0,0, width, height);
+
+  context.beginPath();
+  context.fillStyle = "black";
+  context.fillRect(0, 0,width, height);
+  context.fill();
+  context.closePath();
+
+  context.font = "30px Arial";
+  context.fillStyle = "White";
+  context.fillText("press [1] om steen te gebruiken", 10, 200);
+  context.fillText("press [2] om papier te gebruiken", 10, 250);
+  context.fillText("press [3] om schaar te gebruiken", 10, 300);
+  context.fillText("nadat je dit hebt gedaan wacht op je tegenstander om het zelfde te doen", 10, 350);
+  context.fillText("beide spelers hun zet gedaan dan kun je uitkomst zien en de gebruikte moves", 10, 400);
+  context.fillText("nu kun je weer wat doen en dan moet je wachten dat de 'uitkomst' veranderd", 10, 450);
+  context.fillText("JIJ BENT " + speler, 10, 580);
+}
+</script>
+
+</html>
