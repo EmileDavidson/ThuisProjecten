@@ -1,123 +1,120 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
 
 <body>
-
-  <body>
-    <canvas id="canvas"></canvas>
-    <script>
-      document.onmousemove = function (e) {
-        var x = e.pageX;
-        var y = e.pageY;
-        document.title = "X: " + x + "  Y: " + y;
-      };
-    </script>
-  </body>
+  <canvas id="canvas" width="600" height="1050"></canvas>
 </body>
-
 <canvas id="canvas"></canvas>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io();
-
   //#region  canvas
   const canvas = document.querySelector('canvas');
   let context = canvas.getContext('2d');
 
-  canvas.width = 1050;
-  canvas.height = 600;
-  let width = canvas.width;
-  let height = canvas.height;
+  const width = 1050;
+  const height = 600;
+
+  canvas.width = width;
+  canvas.height = height;
   //#endregion
+  var socket = io();
+
+  socket.on('disconnect', function() {
+    socket = null;
+    alert("server down");
+  });
+  //stuff you need for drawing
   let SpelerD = {};
-  SpelerD.width;
-  SpelerD.height;
-
-  let speler1 = {};
-  speler1.x = 10;
-  speler1.y = 0;
-  speler1.score = 0;
-
-  let speler2 = {};
-  speler2.x = 0;
-  speler2.y = 0;
-  speler2.score = 0;
-
+  SpelerD.width = 20;
+  SpelerD.height = 100;
   let ball = {};
   ball.x = 0;
   ball.y = 0;
-  ball.radius = 0;
   ball.color = "white";
-
-  socket.on("setup", function (sh, sw, s1x, s2x, bx, by, br) {
-    SpelerD.height = sh;
-    SpelerD.width = sw;
-    speler1.x = 20;
-    speler2.x = canvas.width - 25 - 20;
-
-    ball.x = bx;
-    ball.y = by;
-    ball.radius = br;
-
+  ball.radius = 0;
+  let speler1 = {};
+  speler1.score = 0;
+  speler1.y = 0;
+  speler1.x = 20;
+  let speler2 = {};
+  speler2.score = 0;
+  speler2.y = 0;
+  speler2.x = canvas.width - 40;
+  // when you get something from the server:
+  socket.on('setup', function(game, spelernum) {
+    console.log("je zit in game: [" + game + "] als speler: [" + spelernum + "]");
   });
-
-  socket.on("updatevars", function (p1y, p2y, bx, by, s1s, s2s) {
-    speler1.y = p1y;
-    speler2.y = p2y;
-    ball.x = bx;
-    ball.y = by;
+  socket.on("waiting", function() {
+    //kan het bord niet clearen omdat dit zo snel word uitgevoerd dat je ook de text niet meer ziet
+    context.beginPath();
+    context.font = "60px Arial";
+    context.fillText("Waiting for another player...", 30, height / 2 - 30);
+    context.fillText("if it takes to long try reconnecting", 30, height / 2 + 100);
+    context.closePath();
+  });
+  socket.on("update", function(x, y, s1y, s2y, s1s, s2s) {
     speler1.score = s1s;
     speler2.score = s2s;
-  });
-
-  function draw() {
-    context.clearRect(0, 0, height, width);
+    ball.x = x;
+    ball.y = y;
+    speler1.y = s1y;
+    speler2.y = s2y;
+    //update alles wat moet
+    //plaats het speel gebied:
+    context.clearRect(0, 0, width, height);
     context.beginPath();
     context.fillStyle = "black";
     context.fillRect(0, 0, width, height);
     context.closePath();
     context.fill();
     context.stroke();
-    //speler1
+    //plaats de bal:
+    context.beginPath();
+    context.fillStyle = ball.color;
+    context.arc(x, y, 20, 0, 2 * Math.PI);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    //plaats speler1
     context.beginPath();
     context.fillStyle = "white";
     context.fillRect(speler1.x, speler1.y, SpelerD.width, SpelerD.height);
     context.closePath();
     context.fill();
     context.stroke();
-    //speler2
-    context.beginPath();
+    //plaats speler2
     context.fillStyle = "white";
     context.fillRect(speler2.x, speler2.y, SpelerD.width, SpelerD.height);
     context.closePath();
     context.fill();
     context.stroke();
-    //ball
+
+    //plaats de score
     context.beginPath();
-    context.fillStyle = "white";
-    context.arc(ball.x, ball.y, ball.radius, 0, 2 * Math.PI);
+    context.font = "100px Arial";
+    context.fillText(speler1.score + " | " + speler2.score, width / 2 - 100, 100);
     context.closePath();
-    context.fill();
-    context.stroke();
-    //score
-    context.font = "30px Arial";
-    context.fillText(speler1.score + " | " + speler2.score, canvas.width / 2 - 50, 50);
-  }
 
-  setInterval(draw, 10);
-
-  document.addEventListener('mousemove', function (e) {
+  })
+  // when you send something to the server:
+  document.addEventListener('mousemove', function(e) {
     let y = e.clientY - (SpelerD.height / 2);
-    if(y <= 0){y = 0}
-    if(y + SpelerD.height >= canvas.height){ y = canvas.height - SpelerD.height}
+    if (y <= 0) {
+      y = 0
+    }
+    if (y + SpelerD.height >= canvas.height) {
+      y = canvas.height - SpelerD.height
+    }
     socket.emit("mousemove", y);
   });
-
+    context.closePath();
 </script>
 
 </html>
