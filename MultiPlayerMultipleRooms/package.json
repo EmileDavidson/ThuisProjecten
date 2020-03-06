@@ -1,0 +1,9 @@
+{
+  "name": "MultipleRoom",
+  "version": "0.0.1",
+  "description": "My first try for multiple rooms",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^2.3.0"
+  }
+}

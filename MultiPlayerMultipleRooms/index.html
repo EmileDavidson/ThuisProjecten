@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="width" height="height"></canvas>
+</body>
+<canvas id="canvas"></canvas>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  //#region  canvas
+  const canvas = document.querySelector('canvas');
+  let context = canvas.getContext('2d');
+
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  canvas.width = width;
+  canvas.height = height;
+  //#endregion
+  var socket = io();
+
+  socket.on('disconnect', function() {
+    socket = null;
+    alert("server down");
+  });
+  //CODE
+
+  // when you get something from the server:
+  socket.on('setup', function(game, spelernum) {
+  console.log("je zit in game: [" + game + "] als speler: [" + spelernum +"]");
+  });
+  socket.on("waiting", function(){
+    context.beginPath();
+    context.font = "100px Arial";
+    context.fillText("Waiting for another player...", 30, height / 2 - 30);
+        context.fillText("if it takes to long try reconnecting", 30, height / 2 + 100);
+    context.closePath();
+  });
+  socket.on("update", function(){
+    //update alles wat moet gebeuren
+    context.clearRect(0,0,width,height);
+  })
+  // when you send something to the server:
+
+</script>
+
+</html>
