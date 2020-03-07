@@ -40,7 +40,6 @@
           break;
       }
       if (move == "schaar" || move == "papier" || move == "steen") {
-        console.log(move);
         socket.emit("inputgiven", move);
       }
     }
@@ -61,7 +60,6 @@
     alert("server down");
   });
   socket.on("spelercheck", function(s) {
-    console.log(s);
     speler = s;
     updateCanvas();
   });
