@@ -14,7 +14,7 @@ let grid = [];
 let steps = [];
 let current;
 
-let size = 50;
+let size = 20;
 
 let mazeTimer = 10;
 let MazeTimerFast = true;
@@ -48,7 +48,7 @@ function MazeGenTimer() {
         MazeGenerator();
         Draw();
       }
-    }, size / mazeTimer);
+    }, 1);
   } else {
     setTimeout(function() {
       if (OptionsLeft()) {
