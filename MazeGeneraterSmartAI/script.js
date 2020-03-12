@@ -59,7 +59,7 @@ function MazeGenTimer() {
   }
 }
 
-//draw functie drawed alles.
+//draw function drawed alles.
 function Draw() {
   context.clearRect(0, 0, width, height);
   //als er nog legen dingen zijn laat hij zien waar hij momenteel is
@@ -130,7 +130,7 @@ function ShowCurrent() {
   Line(x, y + size, x, y, "red");
 }
 
-//standaard hulp functies voor het niet herhalen van dingen
+//standaard hulp functions voor het niet herhalen van dingen
 
 function OptionsLeft() {
   for (let i = 0; i < grid.length; i++) {
@@ -176,42 +176,92 @@ function GetRandomInt(min, max) {
 
 
 
-// fun code
-let ai_location = grid[0];
-let ai_facing = "right";
 
-function startAI(){
-  if(OptionsLeft()){
+
+
+// fun code
+let startposition = grid[0];
+let eindposition = grid[grid.length - 1];
+let number = 0;
+let currentLocationAI = eindposition;
+currentLocationAI.path = true;
+
+let showPath = false;
+
+function startAI() {
+  if (OptionsLeft()) {
     console.log("maze is nog niet af");
     return;
   }
+  for (let i = 0; i < grid.length; i++) {
+    grid[i].visited = false;
+  }
+  startposition.number = 0;
+  startposition.visited = true;
+  // startposition.drawtext();
+
   updateAI();
 }
 
-function updateAI(){
-  setTimeout(function(){
-    if(ai_location.x == grid[grid.length - 1].x && ai_location.y == grid[grid.length -1].y){
-      console.log("gewonnen");
-      return;
-    }else{
-      //wat moet er gebeuren als de AI nog niet op de eind locatie is
-      let nextAI = ai_location.checkNeighborsAI();
-      ai_location = nextAI;
+function updateAI() {
+  setTimeout(function() {
+    if (!(OptionsLeft())) {
+        if (currentLocationAI.number == 0) {
+          currentLocationAI.path = true;
+          drawPath();
+          return;
+        }
+        CreatePath();
 
     }
-    context.clearRect(0,0,width,height);
-    for(let i = 0; i < grid.length; i++){
-      grid[i].draw();
+    number++;
+    //wat moet er gebeuren als de AI nog niet op de eind locatie is
+
+    //wat moet er gebeuren als de AI nog niet op de eind locatie is
+    context.clearRect(0, 0, width, height);
+    //wat moet er gebeuren voordat ik weer ga drawen (next berekenen)
+    for (let i = 0; i < grid.length; i++) {
+      if (grid[i].number == number - 1) {
+        grid[i].checkNeighborsAI();
+      }
     }
-        drawLocationAI();
-        updateAI();
+
+    //teken het hele canvas opnieuw
+    for (let drawgridcount = 0; drawgridcount < grid.length; drawgridcount++) {
+      grid[drawgridcount].draw();
+    }
+    updateAI();
+    // drawVisited();
+
   }, 10)
 }
 
-function drawLocationAI(){
-  context.beginPath();
-  context.fillStyle = "red";
-  context.fillRect(ai_location.x, ai_location.y, size, size);
-  context.closePath();
-  context.fill();
+function CreatePath() {
+  currentLocationAI.path = true;
+  //alles wat er moet gebeuren om het pad te tekenen
+  let nextAI = currentLocationAI.checkNeighborsForPath();
+  currentLocationAI = nextAI;
+  drawPath();
+}
+
+function drawPath() {
+  for (let i = 0; i < grid.length; i++) {
+    grid[i].drawPath();
+    drawmap();
+    // drawVisited();
+  }
+}
+
+function drawVisited() {
+  for (let i = 0; i < grid.length; i++) {
+    if (grid[i].visited == true) {
+      grid[i].drawtext();
+    }
+  }
+}
+
+function drawmap() {
+  for (let i = 0; i < grid.length; i++) {
+    grid[i].draw();
+  }
 }

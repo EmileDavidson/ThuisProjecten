@@ -57,4 +57,115 @@ class Cell {
       Line(this.x, this.y + size, this.x, this.y);
     }
   }
+
+
+  //fun code
+
+  checkNeighborsAI() {
+    let topWall = grid[Index(this.x, this.y - size)];
+    let rightWall = grid[Index(this.x + size, this.y)];
+    let bottomWall = grid[Index(this.x, this.y + size)];
+    let leftWall = grid[Index(this.x - size, this.y)];
+
+
+    switch (ai_facing) {
+      case "right":
+
+        if (bottomWall && this.walls[2] == false) {
+          // console.log("added bottomWall")
+          ai_facing = "down";
+          return bottomWall;
+        }
+        if (rightWall && this.walls[1] == false) {
+          // console.log('added rightWall')
+          ai_facing = "right";
+          return rightWall;
+        }
+        if (topWall && this.walls[0] == false) {
+          // console.log("added topWall");
+          ai_facing = "up";
+          return topWall;
+        }
+        if (leftWall && this.walls[3] == false) {
+          // console.log('added leftWall')
+          ai_facing = "left";
+          return leftWall;
+        }
+
+        break;
+      case "left":
+
+      if (topWall && this.walls[0] == false) {
+        // console.log("added topWall");
+        ai_facing = "up";
+        return topWall;
+      }
+      if (leftWall && this.walls[3] == false) {
+        // console.log('added leftWall')
+        ai_facing = "left";
+        return leftWall;
+      }
+      if (bottomWall && this.walls[2] == false) {
+        // console.log("added bottomWall")
+        ai_facing = "down";
+        return bottomWall;
+      }
+      if (rightWall && this.walls[1] == false) {
+        // console.log('added rightWall')
+        ai_facing = "right";
+        return rightWall;
+      }
+
+        break;
+      case "up":
+
+      if (rightWall && this.walls[1] == false) {
+        // console.log('added rightWall')
+        ai_facing = "right";
+        return rightWall;
+      }
+      if (topWall && this.walls[0] == false) {
+        // console.log("added topWall");
+        ai_facing = "up";
+        return topWall;
+      }
+      if (leftWall && this.walls[3] == false) {
+        // console.log('added leftWall')
+        ai_facing = "left";
+        return leftWall;
+      }
+      if (bottomWall && this.walls[2] == false) {
+        // console.log("added bottomWall")
+        ai_facing = "down";
+        return bottomWall;
+      }
+
+        break;
+      case "down":
+
+      if (leftWall && this.walls[3] == false) {
+        // console.log('added leftWall')
+        ai_facing = "left";
+        return leftWall;
+      }
+      if (bottomWall && this.walls[2] == false) {
+        // console.log("added bottomWall")
+        ai_facing = "down";
+        return bottomWall;
+      }
+      if (rightWall && this.walls[1] == false) {
+        // console.log('added rightWall')
+        ai_facing = "right";
+        return rightWall;
+      }
+      if (topWall && this.walls[0] == false) {
+        // console.log("added topWall");
+        ai_facing = "up";
+        return topWall;
+      }
+        break;
+    }
+
+
+  }
 }
