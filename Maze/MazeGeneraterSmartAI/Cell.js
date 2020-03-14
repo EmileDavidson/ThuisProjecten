@@ -8,6 +8,7 @@ class Cell {
     this.walls = [true, true, true, true];
 
     this.path = false;
+    this.backgroundcolor = null;
   }
 
 
@@ -58,6 +59,15 @@ class Cell {
     }
   }
 
+  drawBackground(){
+    if(this.backgroundcolor != null){
+      context.beginPath();
+      context.fillStyle = "aliceblue";
+      context.fillRect(this.x, this.y, size,size)
+      context.closePath();
+      context.fill();
+    }
+  }
 
   //fun code
   drawtext() {
@@ -81,22 +91,26 @@ class Cell {
       neighborsAI.push(top);
       top.visited = true;
       top.number = number;
+        top.backgroundcolor = "aliceblue";
     }
     if (right && this.walls[1] == false && right.visited == false) {
       // console.log("added topWall");
       neighborsAI.push(right);
       right.visited = true;
       right.number = number;
+              right.backgroundcolor = "aliceblue";
     }
     if (bottom && this.walls[2] == false && bottom.visited == false) {
       neighborsAI.push(bottom);
       bottom.visited = true;
       bottom.number = number;
+              bottom.backgroundcolor = "aliceblue";
     }
     if (left && this.walls[3] == false && left.visited == false) {
       neighborsAI.push(left);
       left.visited = true;
       left.number = number;
+              left.backgroundcolor = "aliceblue";
     }
 
     if (neighborsAI.length > 0) {
@@ -131,7 +145,7 @@ class Cell {
   drawPath(){
     if(this.path == true){
       context.beginPath();
-      context.fillStyle = "red";
+      context.fillStyle = "lightgray";
       context.fillRect(this.x, this.y, size, size);
       context.closePath();
       context.fill();
