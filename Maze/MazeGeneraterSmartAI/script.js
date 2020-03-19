@@ -14,7 +14,7 @@ let grid = [];
 let steps = [];
 let current;
 
-let size = 25;
+let size = 70;
 
 let mazeTimer = 1;
 let MazeTimerFast = true;
