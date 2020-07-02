@@ -11,7 +11,7 @@ canvas.height = height;
 //start
 
 let grid = [];
-let size = 20;
+let size = 10;
 
 let drawing = false;
 let mousePosX = 0;
@@ -41,7 +41,7 @@ function setup() {
 
   for (let cc = 0; cc < colorcols; cc++) {
     for (let cr = 0; cr < colorrows; cr++) {
-      let colorcell = new Cell((width - size * 2 ) + cr, cc * colorsize);
+      let colorcell = new Cell((width - size * 2) + cr, cc * colorsize);
       colorcell.color = colors[cc];
       colorgrid.push(colorcell);
     }
@@ -56,7 +56,7 @@ function draw() {
   for (let i = 0; i < grid.length; i++) {
     grid[i].drawlines();
   }
-  for(let j = 0; j < colorgrid.length; j++){
+  for (let j = 0; j < colorgrid.length; j++) {
     colorgrid[j].drawFillcolorgrid();
   }
 }

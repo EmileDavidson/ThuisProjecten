@@ -44,19 +44,15 @@ class Cell {
 
     if (topWall && !topWall.visited) {
       neighbors.push(topWall);
-      // console.log("added topWall");
     }
     if (rightWall && !rightWall.visited) {
       neighbors.push(rightWall);
-      // console.log('added rightWall')
     }
     if (bottomWall && !bottomWall.visited) {
       neighbors.push(bottomWall);
-      // console.log("added bottomWall")
     }
     if (leftWall && !leftWall.visited) {
       neighbors.push(leftWall);
-      // console.log('added leftWall')
     }
 
     if (neighbors.length > 0) {
@@ -84,7 +80,6 @@ class Cell {
 
 
   checkNeighborsPlayer(input) {
-    console.log(input);
     let neighbors = [];
 
     let up = grid[Index(this.x, this.y - size)];
@@ -128,7 +123,6 @@ class Cell {
         top.backgroundcolor = "#F7D69D";
     }
     if (right && this.walls[1] == false && right.visited == false) {
-      // console.log("added topWall");
       neighborsAI.push(right);
       right.visited = true;
       right.number = number;

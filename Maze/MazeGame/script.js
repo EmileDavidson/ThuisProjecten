@@ -9,7 +9,7 @@ canvas.height = height;
 
 
 //start
-
+const myInput = document.getElementById('myInput');
 let grid = [];
 let steps = [];
 let current;
@@ -26,44 +26,76 @@ setup();
 let playerLocation = grid[0];
 let eindlocation = grid[grid.length - 1];
 
+
+window.addEventListener("keydown", function(e) {
+  // space and arrow keys
+  if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+    e.preventDefault();
+  }
+}, false);
+
+myInput.addEventListener('keydown', getInput, false);
+
+function getInput(evt) {
+  if (evt.key == "Enter") {
+    if(isNaN(myInput.value) == false){
+      if(parseInt(myInput.value) <= 20){
+        myInput.value = "20";
+      }
+      if(Math.floor(width / parseInt(myInput.value)) <= 3){
+        myInput.value = "";
+        return;
+      }
+
+      size = parseInt(myInput.value);;
+          resetall();
+    }
+    myInput.value = "";
+  }
+}
+
+
 //player
 DrawMap();
-function DrawMap(){
-    context.clearRect(0,0,width,height);
-    for (let i = 0; i < grid.length; i++) {
-      grid[i].drawBackground();
-      grid[i].drawPath();
-      grid[i].draw();
-      if(i == grid.length - 1){
-        context.beginPath();
-        context.fillStyle = "green";
-        context.fillRect(grid[i].x + (size/6), grid[i].y + (size/6), size - (size/3), size - (size/3));
-        context.closePath();
-        context.stroke();
-        context.fill();
-      }
+
+function DrawMap() {
+  context.clearRect(0, 0, width, height);
+  for (let i = 0; i < grid.length; i++) {
+    grid[i].drawBackground();
+    grid[i].drawPath();
+    grid[i].draw();
+    if (i == grid.length - 1) {
+      context.beginPath();
+      context.fillStyle = "green";
+      context.fillRect(grid[i].x + (size / 6), grid[i].y + (size / 6), size - (size / 3), size - (size / 3));
+      context.closePath();
+      context.stroke();
+      context.fill();
     }
+  }
 
   context.beginPath();
   context.fillStyle = "red";
-  context.fillRect(playerLocation.x + (size / 4), playerLocation.y + (size/4), size / 2, size / 2);
+  context.fillRect(playerLocation.x + (size / 4), playerLocation.y + (size / 4), size / 2, size / 2);
   context.closePath();
   context.stroke();
   context.fill();
 }
 
 addEventListener("keydown", (e) => {
-if(OptionsLeft()){return;}
-let nextplayerlocation = playerLocation.checkNeighborsPlayer(e.keyCode);
-if(nextplayerlocation != undefined){
-playerLocation = nextplayerlocation;
-}
-DrawMap();
-checkfinish();
+  if (OptionsLeft()) {
+    return;
+  }
+  let nextplayerlocation = playerLocation.checkNeighborsPlayer(e.keyCode);
+  if (nextplayerlocation != undefined) {
+    playerLocation = nextplayerlocation;
+  }
+  DrawMap();
+  checkfinish();
 });
 
-function checkfinish(){
-  if(playerLocation == eindlocation){
+function checkfinish() {
+  if (playerLocation == eindlocation) {
     resetall();
   }
 }
@@ -180,40 +212,47 @@ function startSmartAI() {
     alert("wacht tot de maze helemaal gemaakt is");
     return;
   }
-  let startposition = playerLocation;
+
+  //RESET alles
+  number = 0;
+  currentLocationAI = eindlocation;
   for (let i = 0; i < grid.length; i++) {
     grid[i].visited = false;
     grid[i].path = false;
     grid[i].number = null;
+    grid[i].backgroundcolor = null;
   }
+  DrawMap();
+  let startposition = playerLocation;
+
   startposition.number = 0;
   startposition.visited = true;
   startposition.backgroundcolor = "#F7D69D";
   numberGrid();
 }
 
-function numberGrid(){
-    setTimeout(function() {
-      if(!(OptionsLeft())){
-        if(currentLocationAI.number == 0){
-          currentLocationAI.path = true;
-          DrawMap();
-          return;
-        }
-        CreatePath();
-      }else{
-        number++;
-        context.clearRect(0,0,width,height);
+function numberGrid() {
+  setTimeout(function() {
+    if (!(OptionsLeft())) {
+      if (currentLocationAI.number == 0) {
+        currentLocationAI.path = true;
+        DrawMap();
+        return;
+      }
+      CreatePath();
+    } else {
+      number++;
+      context.clearRect(0, 0, width, height);
 
-        for (let i = 0; i < grid.length; i++) {
-          if (grid[i].number == number - 1) {
-            grid[i].checkNeighborsAI();
-          }
+      for (let i = 0; i < grid.length; i++) {
+        if (grid[i].number == number - 1) {
+          grid[i].checkNeighborsAI();
         }
       }
-      DrawMap();
-      numberGrid();
-    }, 1)
+    }
+    DrawMap();
+    numberGrid();
+  }, 1)
 }
 
 function CreatePath() {
@@ -279,17 +318,13 @@ function GetRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function resetall(){
+function resetall() {
   grid = [];
   steps = [];
   current;
 
-
-
   setup();
   MazeGenerator();
-
-
 
   playerLocation = grid[0];
   eindlocation = grid[grid.length - 1];

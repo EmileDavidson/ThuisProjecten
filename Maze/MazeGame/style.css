@@ -18,3 +18,8 @@ button{
 button hover{
   background: red;
 }
+.inputfield{
+  width: 280px;
+  border: black 3px solid;
+  padding:  5px;
+}
