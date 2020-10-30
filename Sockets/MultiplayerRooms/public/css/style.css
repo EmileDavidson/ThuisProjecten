@@ -1,0 +1,210 @@
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  html, body{
+    min-height: 100% !important; 
+    height: 100%;
+  }
+  .notactive{
+    display: none;
+  }
+  
+  .active{
+    display: block;
+  }
+/* lobby page */
+@font-face {
+  font-family: medium;
+  /* src: url(../fonts/Kanit-Thin.ttf); */
+}
+
+@font-face {
+  font-family: black;
+  /* src: url(../fonts/Kanit-Medium.ttf); */
+}
+
+body{
+color:midnightblue;
+background-color: midnightblue;
+font-family: medium;
+font-size: 20px;
+overflow: hidden;
+}
+.container{
+background-color: yellow;
+width:1200px;
+height: 775px;
+margin: 50px auto;
+background-color: lightcyan;
+display: grid;
+grid-template-columns: 300px 800px;
+grid-template-rows: 100px 650px 100px;
+padding: 10px;
+border-radius: 20px;
+border: 5px solid midnightblue;
+}
+
+
+#menu,  #menu2{
+grid-column:1;
+grid-row: 2;
+border: 2px solid skyblue;
+margin: 5px;
+height: 650px;
+overflow-y: scroll;
+background-color: aliceblue;
+}
+
+li{
+list-style-type: none;
+}
+
+.title{
+text-align: center;
+grid-row: 1;
+grid-column: 1 /3;
+}
+
+h2{
+font-family: black;
+text-align:center;
+font-size: 18px;
+color:black;
+}
+
+
+a{
+text-decoration: none;
+}
+
+a.active {
+color:red;
+font-weight: bold;
+}
+
+li a{
+  border-style: solid;
+  /* width: 100%; */
+  display: block;
+  padding: 10PX;;
+}
+li{
+  display: block;
+  padding: 2px;
+  margin: 5px;
+}
+#menu h2, #menu2 h2{
+  font-size: 200%;;
+}
+
+a.notActive{
+color:gray;
+/* font-weight: lighter; */
+}
+
+a:hover{
+color:Royalblue  ;
+}
+
+/*  */
+
+
+
+#createServer.active, #canvas.active, #joinPublicServer.active, #joinPrivateServer.active {
+  grid-row: 2 /3;
+  grid-column: 2 /3;
+  overflow: hidden;
+  width: 800px;
+  height: 650px;
+  padding: 0px;
+  margin-left: 20px;
+  background-color: lightblue;
+  border-style: solid;
+  visibility: visible;
+  }
+  #createServer.notActive, #canvas.notActive, #joinPublicServer.notActive, #joinPrivateServer.notActive{
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  #canvas.active + #menu{
+    display: none;
+  }
+
+  #canvas.notactive + #menu + #menu2{
+    display: none;
+  }
+    
+
+  #menu2.notActive{
+    display: none;
+  }
+
+  #menu.notActive{
+    display: none;
+  }
+
+  .input-container{
+    width: 100%;
+    margin-top: 10%;
+  }
+  #joinPrivateServer input{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  #joinPrivateServer h1{
+    text-align: center;
+    padding-top: 15%;
+    font-size: 300%;
+  }
+  #joinPrivateServer h3{
+    text-align: center;
+  }
+
+  .privateServer-join-btn{
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #joinPrivateServer a{
+    text-align: center;
+    margin: 0 auto;
+    border-style: solid;
+    padding: 5px;
+  }
+
+.input-container{
+  width: 100%;
+  margin-top: 10%;
+}
+#createServer input{
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+}
+#createServer h1{
+  text-align: center;
+  padding-top: 5%;
+  font-size: 300%;
+}
+#createServer h3{
+  text-align: center;
+}
+
+.createServer-create-btn{
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+#createServer a{
+  text-align: center;
+  margin: 0 auto;
+  border-style: solid;
+  padding: 5px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="lobby" class="active">
+    <div class="container">
+      <h1 class="title">Multiple Rooms socket.io</h1>
+      <!-- game scenes -->
+      <div id="menu" class="active">
+        <h2>Options:</h2>
+        <ol>
+          <li><a id="createServer-btn" class="active">Create Server</a></li>
+          <li><a id="joinPublicServer-btn" class="notActive">Join public server</a></li>
+          <li><a id="joinPrivateServer-btn" class="notActive">Join private server</a></li>
+        </ol>
+      </div>
+      <!-- menu 2 (show when canvas is loaded.) -->
+      <div id="menu2" class="notActive">
+        <h2>Options:</h2>
+        <ol>
+          <li><a id="leave-btn" class="notActive">Leave</a></li>
+        </ol>
+      </div>
+      <!-- canvas -->
+      <canvas id="canvas" class="notActive"></canvas>
+      <!-- doesnt show when canvas is loaded. -->
+
+      <!-- create server -->
+      <div id="createServer" class="active">
+        <div>
+          <h1>Create Public Server</h1>
+          <!-- <form> -->
+          <h3>Server name</h3>
+          <input type="text" id="publicServerNameInput" required>
+          <div class='createServer-create-btn'><a id="createPublicServer-btn">click to create</a></div>
+          <!-- </form> -->
+        </div>
+
+        <div>
+          <h1>Create Private Server</h1>
+          <!-- <form> -->
+          <h3>Server name</h3>
+          <input type="text" id="privateServerNameInput" required>
+          <h3>Server password</h3>
+          <input type="text" id="privateServerPasswordInput" required>
+          <div class='createServer-create-btn'><a id="createPrivateServer-btn">click to create</a></div>
+        <!-- </form> -->
+        </div>
+      </div>
+
+      <!-- join server -->
+      <div id="joinPublicServer" class="notActive">
+        <h2>Join Public Server</h2>
+      </div>
+
+      <div id="joinPrivateServer" class="notActive">
+        <h1>Join Private Server</h1>
+        <div class="input-container">
+          <h3>Server name</h3>
+          <input type="text" placeholder="Server name (ask host)">
+          <h3>Server password</h3>
+          <input type="text" placeholder="Server password (ask host)">
+          <div class='privateServer-join-btn'><a>Click to join</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/main.js"></script>
+<script src="js/buttons.js"></script>
+<script src="js/tools.js"></script>
+
+</html>
