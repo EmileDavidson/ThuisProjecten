@@ -1,0 +1,1010 @@
+[
+  {
+    "x": 0,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 100,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 200,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 300,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 400,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 500,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 600,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 700,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 800,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 900,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1000,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1100,
+    "y": 0,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 0,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 100,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 200,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 300,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 400,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 500,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 600,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 700,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 800,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 900,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1000,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1100,
+    "y": 100,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 0,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 100,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 200,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 300,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 400,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 500,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 600,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 700,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 800,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 900,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1000,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1100,
+    "y": 200,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 0,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 100,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 200,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 300,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 400,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 500,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 600,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 700,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 800,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 900,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1000,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1100,
+    "y": 300,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 0,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 100,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 200,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 300,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 400,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 500,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 600,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 700,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 800,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 900,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1000,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      false,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1100,
+    "y": 400,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      false,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 0,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 100,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 200,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 300,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 400,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 500,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 600,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 700,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 800,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 900,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      false,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1000,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      false
+    ],
+    "path": false,
+    "backgroundcolor": null
+  },
+  {
+    "x": 1100,
+    "y": 500,
+    "visited": true,
+    "number": null,
+    "walls": [
+      false,
+      true,
+      true,
+      true
+    ],
+    "path": false,
+    "backgroundcolor": null
+  }
+]

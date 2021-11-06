@@ -149,7 +149,6 @@ server.listen(PORT, () => {
 });
 
 function playerLeft(socket, socketId) {
-  console.log("ik kom hier zeker weten");
   for (let i = 0; i < games.length; i++) {
     //loop thruw every game.
     console.log(games[i]);
@@ -199,7 +198,6 @@ function checkForEnoughPlayers(socket, socketid, gameAlreadyFound, i, playerleft
     if (games[gameNumber].spelers[x].id == null) {
       //one of the players is missing
       for (let p = 0; p < games[gameNumber].spelers.length; p++) {
-        console.log("ik kom ook hier");
         //loop thruw all player again an send them that they have to wait.
         socket.to(games[gameNumber].spelers[p].id).emit("loadWaitingLobby");
       }

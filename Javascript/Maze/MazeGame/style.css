@@ -1,0 +1,25 @@
+/* body{
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+} */
+
+
+canvas{
+    background-color: aliceblue;
+}
+button{
+  padding:  10px;
+  margin: 10px;
+  border-radius: 50px;
+  outline: none;
+}
+
+button hover{
+  background: red;
+}
+.inputfield{
+  width: 280px;
+  border: black 3px solid;
+  padding:  5px;
+}
