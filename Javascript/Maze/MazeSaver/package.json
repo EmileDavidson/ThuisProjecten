@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Trying to save the generated maze",
   "dependencies": {
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "socket.io": "^2.3.0"
   }
 }
